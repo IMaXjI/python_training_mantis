@@ -5,5 +5,16 @@
   "webadmin": {
     "username": "administrator",
     "password": "root"
+  },
+  "ftp": {
+    "host": "172.17.41.29",
+    "username": "mantis",
+    "password": "mantis"
+  },
+  "james": {
+    "host": "172.17.41.29",
+    "port": 4555,
+    "username": "root",
+    "password": "root"
   }
 }
