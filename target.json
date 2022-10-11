@@ -1,6 +1,8 @@
 {
   "web": {
-    "baseUrl": "http://172.17.41.29/mantisbt-1.2.20/"
+    "baseUrl": "http://172.17.41.29/mantisbt-1.2.20/",
+    "editUrl": "http://172.17.41.29/mantisbt-1.2.20/manage_proj_create_page.php",
+    "projPageUrl": "http://172.17.41.29/mantisbt-1.2.20/manage_proj_page.php"
   },
   "webadmin": {
     "username": "administrator",

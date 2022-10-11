@@ -9,7 +9,6 @@ class ProjectHelper:
 
     project_cache = None
 
-
     def create_project(self, project):
         wd = self.app.wd
         self.app.open_edit_page()

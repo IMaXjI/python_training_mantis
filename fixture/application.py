@@ -21,6 +21,8 @@ class Application:
         self.james = JamesHelper(self)
         self.config = config
         self.base_url = config['web']['baseUrl']
+        self.edit_url = config['web']['editUrl']
+        self.proj_page_url = config['web']['projPageUrl']
 
 
     def open_home_page(self):
@@ -30,13 +32,15 @@ class Application:
 
     def open_edit_page(self):
         wd = self.wd
-        if not (wd.current_url.endswith('/manage_proj_create_page.php/') and len(wd.find_elements_by_css_selector("input[value='Add Project']")) > 0):
-            wd.get('http://172.17.41.29/mantisbt-1.2.20/manage_proj_create_page.php')
+        if not (wd.current_url.endswith('/manage_proj_create_page.php/') and
+                len(wd.find_elements_by_css_selector("input[value='Add Project']")) > 0):
+            wd.get(self.edit_url)
 
     def open_project_list(self):
         wd = self.wd
-        if not (wd.current_url.endswith('/manage_proj_page.php') and len(wd.find_elements_by_css_selector("input[value='Add Category']")) > 0):
-            wd.get('http://172.17.41.29/mantisbt-1.2.20/manage_proj_page.php')
+        if not (wd.current_url.endswith('/manage_proj_page.php') and
+                len(wd.find_elements_by_css_selector("input[value='Add Category']")) > 0):
+            wd.get(self.proj_page_url)
 
 
     def is_valid(self):
