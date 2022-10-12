@@ -1,5 +1,5 @@
-# from suds.client import Client
-# from suds import WebFault
+from suds.client import Client
+from suds import WebFault
 from model.project import Project
 
 
@@ -22,5 +22,5 @@ class SoapHelper:
         client = Client(self.app.soap_url)
         project_list = []
         for project in client.service.mc_projects_get_user_accessible(username, password):
-            project_list.append(Project(name=project.project_name, id=project.id))
+            project_list.append(Project(project_name=project.name, id=project.id))
         return project_list

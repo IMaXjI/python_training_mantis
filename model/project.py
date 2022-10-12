@@ -12,7 +12,7 @@ class Project:
 
 
     def __repr__(self):
-        return "%s:%s:%s:%s" %(self.id, self.project_name, self.status, self.view_status)
+        return "%s:%s" %(self.id, self.project_name)
 
 
     def __eq__(self, other):

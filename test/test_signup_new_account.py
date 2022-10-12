@@ -15,7 +15,11 @@ def test_signup_new_account(app):
     email = username + '@localhost'
     app.james.ensure_user_existence(username, password)
     app.signup.new_user(username, email, password)
-    app.session.login(username, password)
-    assert app.session.is_loggen_in_as(username)
-    app.session.logout()
+    assert app.soap.can_login(username, password)
+
+
+
+    # app.session.login(username, password)
+    # assert app.session.is_loggen_in_as(username)
+    # app.session.logout()
     

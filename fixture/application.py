@@ -24,9 +24,11 @@ class Application:
         self.james = JamesHelper(self)
         self.signup = SignupHelper(self)
         self.mail = MailHelper(self)
+        self.soap = SoapHelper(self)
         self.config = config
         self.base_url = config['web']['baseUrl']
         self.edit_url = config['web']['editUrl']
+        self.soap_url = config['web']['soapUrl']
         self.proj_page_url = config['web']['projPageUrl']
 
 
