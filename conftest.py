@@ -24,8 +24,8 @@ def app(request, config):
     browser = request.config.getoption("--browser")
     if fixture is None or not fixture.is_valid():
         fixture = Application(browser=browser, config=config)
-    # fixture.session.ensure_login(username=web_config['webadmin']["username"],
-    #                              password=web_config['webadmin']["password"])
+    fixture.session.ensure_login(username=config['webadmin']["username"],
+                                 password=config['webadmin']["password"])
     return fixture
 
 
@@ -48,7 +48,7 @@ def install_server_config(host, username, password):
             remote.remove('config_inc.php.back')
         if remote.path.isfile('config_inc.php'):
             remote.rename('config_inc.php', 'config_inc.php.back')
-        remote.upload(os.path.join(os.path.dirname(__file__),'resources/config_inc.php'), 'config_inc.php')
+        remote.upload(os.path.join(os.path.dirname(__file__), 'resources/config_inc.php'), 'config_inc.php')
 
 
 def restore_server_config(host, username, password):
