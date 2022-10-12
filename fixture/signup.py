@@ -12,7 +12,7 @@ class SignupHelper:
         wd.find_element_by_name('email').send_keys(email)
         wd.find_element_by_css_selector("input[type='submit']").click()
 
-        mail = self.app.mail.get_mail(username, password, '')
+        mail = self.app.mail.get_mail(username, password, '[MantisBT] Account registration')
         url = self.extract_confirmation_url(mail)
 
         wd.get(url)

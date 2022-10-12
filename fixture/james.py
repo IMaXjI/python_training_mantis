@@ -31,7 +31,7 @@ class JamesHelper:
             self.telnet.read_until(text.encode('ascii'), 5)
 
         def write(self, text):
-            self.write(text.encode('ascii'))
+            self.telnet.write(text.encode('ascii'))
 
         def is_user_registered(self, username):
             self.write('verify %s\n' %username)

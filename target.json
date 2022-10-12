@@ -15,7 +15,7 @@
     "password": "mantis"
   },
   "james": {
-    "host": "172.17.41.29",
+    "host": "localhost",
     "port": 4555,
     "username": "root",
     "password": "root"
